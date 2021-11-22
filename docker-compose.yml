@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  rabbitmq:
+    image: 'rabbitmq:management'
+    restart: unless-stopped
+    container_name: 'rabbitmq-local'
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - my-data:/var/lib/rabbitmq/data
+
+volumes:
+  my-data:
